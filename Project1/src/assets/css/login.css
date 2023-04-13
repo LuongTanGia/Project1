@@ -1,0 +1,157 @@
+.login {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    width: 100%;
+    height: 810px;
+    /* width: 1440px; */
+}
+.login_left {
+    background: #f7f7f7;
+    width: calc(1440px - 848px);
+}
+.login_left_content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.altaLogo {
+    margin-bottom: 75px;
+}
+.login_left_content .formInput {
+    /* margin: 82px 98px 0 94px; */
+    width: 400px;
+}
+.login_left_content img {
+    margin-top: 82px;
+}
+.login_right {
+    width: 848px;
+}
+.btn_login {
+    width: 162px;
+    height: 40px;
+
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background: #ff9138;
+    cursor: pointer;
+    color: #ffffff;
+
+    transition: border-color 0.25s;
+}
+form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.login_right .LoginImg {
+    margin: 113px 33px 83px 79px;
+}
+
+form {
+    position: relative;
+    /* background-color: rebeccapurple; */
+}
+.eye-icon {
+    position: absolute;
+    /* top: 10px; */
+
+    right: 25px;
+    bottom: 23px;
+}
+.login_left a {
+    display: block;
+    width: 100%;
+
+    margin-top: 8px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: center;
+    /* identical to box height, or 150% */
+    /* Red */
+
+    color: #e73f3f;
+}
+
+.btnBox {
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+}
+.btn_Huy {
+    width: 162px;
+    height: 40px;
+    border: 1px solid #ff9138;
+    background: transparent;
+    /* 16/16 Bold */
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-400 */
+
+    color: #ff9138;
+}
+.login_right .ForgotImg {
+    margin: 153px 94px 97px 43px;
+}
+.login_right {
+    position: relative;
+}
+.Right_content {
+    float: left;
+    width: 370px;
+    position: absolute;
+    top: 50%;
+    left: 55%;
+}
+.Right_content p {
+    margin: 0;
+    float: left;
+
+    width: 361px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 51px;
+    /* or 150% */
+
+    /* text-align: center; */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.Right_content h1 {
+    width: 365 px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 54px;
+    /* identical to box height, or 150% */
+
+    text-align: center;
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
