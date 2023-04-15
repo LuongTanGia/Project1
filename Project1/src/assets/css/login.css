@@ -30,10 +30,71 @@
 .login_right {
     width: 848px;
 }
+.Login_From {
+    height: 100%;
+}
+.Login_From .group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    overflow: hidden;
+    width: 400px;
+    height: 44px;
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+    background: #ffffff;
+}
+.Login_From .title {
+    /* 22/22 Bold */
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    text-align: center;
+    margin-bottom: 16px;
+    /* or 150% */
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+}
+.Login_From label {
+    margin-bottom: 4px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+
+    color: #37474f;
+}
+.Login_From .group input {
+    width: 100%;
+    height: 100%;
+    padding: 8.5px 0 8.5px 12px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.Login_From .group span {
+    color: #777;
+    display: flex;
+    margin: 13.66px;
+    cursor: pointer;
+}
+.Login_From .group span ion-icon:nth-child(2) {
+    display: none;
+}
 .btn_login {
     width: 162px;
     height: 40px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 8px;
     border: 1px solid transparent;
     padding: 0.6em 1.2em;
@@ -43,61 +104,66 @@
     background: #ff9138;
     cursor: pointer;
     color: #ffffff;
-
     transition: border-color 0.25s;
+    /* 16/16 Bold */
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    /* white */
+    color: #ffffff;
 }
-form {
+.btnBox {
+    margin-top: 48px;
     display: flex;
-    align-items: center;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
 }
 .login_right .LoginImg {
     margin: 113px 33px 83px 79px;
 }
 
-form {
-    position: relative;
-    /* background-color: rebeccapurple; */
-}
-.eye-icon {
-    position: absolute;
-    /* top: 10px; */
-
-    right: 25px;
-    bottom: 23px;
-}
 .login_left a {
     display: block;
     width: 100%;
-
     margin-top: 8px;
     font-family: "Nunito";
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 21px;
-    text-align: center;
+
     /* identical to box height, or 150% */
     /* Red */
 
     color: #e73f3f;
 }
 
-.btnBox {
-    margin-top: 48px;
+/* .btnBox {
+    
     width: 100%;
     display: flex;
     justify-content: center;
     gap: 45px;
-}
+} */
 .btn_Huy {
+    margin-right: 24px;
     width: 162px;
     height: 40px;
-    border: 1px solid #ff9138;
-    background: transparent;
-    /* 16/16 Bold */
+    left: 118px;
+    top: 483px;
 
+    /* Orange/$-Orange-400 */
+
+    border: 1px solid #ff9138;
+    /* down */
+
+    filter: drop-shadow(0px 0px 6px #e7e9f2);
+    border-radius: 8px;
     font-family: "Nunito";
     font-style: normal;
     font-weight: 700;
@@ -132,12 +198,6 @@ form {
     font-weight: 400;
     font-size: 34px;
     line-height: 51px;
-    /* or 150% */
-
-    /* text-align: center; */
-
-    /* Orange/$-Orange-500 */
-
     color: #ff7506;
 }
 .Right_content h1 {
@@ -148,10 +208,12 @@ form {
     font-size: 36px;
     line-height: 54px;
     /* identical to box height, or 150% */
-
     text-align: center;
-
     /* Orange/$-Orange-500 */
-
     color: #ff7506;
+}
+.btnBox_forgot {
+    margin-top: 56px;
+    display: flex;
+    justify-content: center;
 }

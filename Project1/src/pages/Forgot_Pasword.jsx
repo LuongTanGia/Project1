@@ -1,71 +1,67 @@
-import React from "react";
-import { useState } from "react";
-import LoginInput from "../components/Login/LoginInput";
+import React, { useState } from "react";
 import altaLogo from "../assets/img/Group.svg";
-import loginImg from "../assets/img/Login.svg";
 import forgotImg from "../assets/img/Frame.svg";
 
 import "../assets/css/login.css";
 
 function Login() {
-    const [values, setValues] = useState({
-        password: "",
-    });
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-    const inputs = [
-        {
-            id: 4,
-            name: "password",
-            type: "password",
-            placeholder: "Mật khẩu ",
-            // errorMessage:
-            //     "Password should be 8-20 characters and include at least 1 letter, 1 number and 1 special character!",
-            label: "Mật khẩu ",
-            pattern: `^(?=.*[0-9])(?=.*[a-zA-Z])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,20}$`,
-            required: true,
-        },
-        {
-            id: 5,
-            name: "confirmPassword",
-            type: "password",
-            placeholder: "Nhập lại mật khẩu ",
-            errorMessage: "Passwords don't match!",
-            label: "Nhập lại mật khẩu ",
-            pattern: values.password,
-            required: true,
-        },
-    ];
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(!isPasswordVisible);
     };
-
-    const onChange = (e) => {
-        setValues({ ...values, [e.target.name]: e.target.value });
-    };
-
     return (
         <div className="login">
             <div className="login_left">
                 <div className="login_left_content">
                     <img src={altaLogo} alt="altaLogo" className="altaLogo" />
                     <div className="Login_From">
-                        <form onSubmit={handleSubmit}>
-                            {inputs.map((input) => (
-                                <LoginInput
-                                    key={input.id}
-                                    {...input}
-                                    value={values[input.name]}
-                                    onChange={onChange}
-                                />
-                            ))}
-                            {/* <i class="bx bx-hide eye-icon"></i> */}
-
-                            {/* <a href="#!">Quên mật khẩu?</a> */}
-                        </form>
+                        <label htmlFor="password">Mật khẩu </label>
+                        <div className="group">
+                            <input
+                                type={isPasswordVisible ? "text" : "password"}
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                            />
+                            <span id="showPassword">
+                                <ion-icon
+                                    name={
+                                        isPasswordVisible
+                                            ? "eye-outline"
+                                            : "eye-off-outline"
+                                    }
+                                    onClick={togglePasswordVisibility}
+                                ></ion-icon>
+                                {/* <ion-icon name="eye-outline"></ion-icon> */}
+                            </span>
+                        </div>
+                        <label htmlFor="password">Nhập lại mật khẩu </label>
+                        <div className="group">
+                            <input
+                                type={isPasswordVisible ? "text" : "password"}
+                                id="password"
+                                name="password"
+                                placeholder="Password"
+                            />
+                            <span id="showPassword">
+                                <ion-icon
+                                    name={
+                                        isPasswordVisible
+                                            ? "eye-outline"
+                                            : "eye-off-outline"
+                                    }
+                                    onClick={togglePasswordVisibility}
+                                ></ion-icon>
+                                {/* <ion-icon name="eye-outline"></ion-icon> */}
+                            </span>
+                        </div>
+                        <a href="http://localhost:5173/forgot">
+                            Quên mật khẩu?
+                        </a>
                         <div className="btnBox">
                             {/* <button className="btn_Huy btn">Huy</button> */}
-                            <button className="btn_login btn">Xác nhận</button>
+                            <button className="btn_login btn">Đăng Nhập</button>
                         </div>
                     </div>
                 </div>
