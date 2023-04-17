@@ -1,0 +1,113 @@
+.lineChart {
+    margin-top: 16px;
+    overflow: hidden;
+    width: 791px;
+    height: 484px;
+    /* Pink shadow */
+    /* White */
+    background: #ffffff;
+    border-radius: 12px;
+    filter: drop-shadow(2px 2px 15px rgba(70, 64, 67, 0.1));
+}
+.lineChart_top {
+    margin: 24px 24px 0px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left h4 {
+    /* 20/20 Bold */
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+}
+.left p {
+    /* 14/14 Reg */
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-200 placeholder */
+
+    color: #a9a9b0;
+}
+.ChartBox {
+    width: 738px !important;
+    height: 373px;
+    margin-left: 21px;
+}
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.right p {
+    margin-right: 8px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+}
+.right .dropdown button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* gray blue/gray 4 - place holder */
+    background: transparent;
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+
+    color: #7e7d88;
+}
+.List_options {
+    width: 106px;
+    height: 42px;
+    overflow: hidden;
+    /* white */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+}
+.List_options .options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 42px;
+    border: none;
+}
+.List_options .options > .option {
+    width: 106px;
+    height: 100px;
+}

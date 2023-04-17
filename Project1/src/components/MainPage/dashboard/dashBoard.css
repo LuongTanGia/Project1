@@ -1,0 +1,525 @@
+.dashBoard {
+    /* width: 790px; */
+    display: flex;
+    justify-content: space-between;
+}
+.dashBoard_center {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.center_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+    width: 186px;
+    height: 120px;
+    /* White */
+    background: #ffffff;
+    border-radius: 10px;
+}
+.item_top {
+    margin: 8px 0 0 12.5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+.item_top p {
+    margin-left: 12px;
+    width: 72px;
+    height: 36px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    /* or 129% */
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+.item_bottom {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.item_bottom p {
+    margin: 0 0 7px 12px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+.item_bottom img {
+    margin: 4px 3.37px 5px 6.9px;
+}
+.item_bottom span {
+    padding-right: 3.5px;
+    margin-right: 7.7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 15px;
+    background: rgba(255, 149, 1, 0.15);
+    border-radius: 7.18115px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 8px;
+    line-height: 12px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-400 */
+
+    color: #ff9138;
+}
+.center_item:nth-child(2) .item_bottom span,
+.center_item:nth-child(4) .item_bottom span {
+    background: rgba(231, 63, 63, 0.15);
+    color: #e73f3f;
+}
+.dashBoard_right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 401px;
+    height: 810px;
+    z-index: -1;
+    /* White */
+    z-index: 100;
+    background: #ffffff;
+    /* Dropdown */
+
+    box-shadow: 0px 4px 6px rgba(219, 219, 219, 0.5);
+    border-radius: 8px 0px 0px 8px;
+}
+.Home {
+    position: relative;
+}
+.header_right {
+    margin: 28px 0 0 109px;
+}
+.dashBoard_left .title {
+    margin: 16px 0;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+/* --------------- Ellipse -------------- */
+
+.skill {
+    width: 65px;
+    height: 65px;
+    /* background: cornflowerblue; */
+    position: relative;
+}
+.outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    /* background: rgb(222, 222, 222);
+    border: 1px solid red; */
+    padding: 5px;
+}
+.inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(255, 255, 255); */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+.number {
+}
+
+circle {
+    width: 65px;
+    height: 65px;
+    fill: none;
+    stroke: #ff7506;
+    stroke-width: 2px;
+    stroke-dasharray: 252;
+    stroke-dashoffset: 252;
+    animation: anim 2s linear forwards;
+}
+
+svg {
+    transform: rotate(-95deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+svg.svg2 {
+    /* transform: rotate(-95deg); */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes anim {
+    100% {
+        stroke-dashoffset: 85.2;
+    }
+}
+
+/* ------------- Ellipse2----------------- */
+.skill2 {
+    width: 60px;
+    height: 60px;
+    /* background: cornflowerblue; */
+    position: relative;
+}
+.outer2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background: rgb(222, 222, 222); */
+    /* border: 1px solid red; */
+    padding: 10px;
+    /* box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7); */
+}
+.inner2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(255, 255, 255); */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+.number {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+
+circle.circle2 {
+    fill: none;
+    stroke: #7e7d88;
+    stroke-width: 2px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: anim2 2s linear forwards;
+}
+
+svg.svg2 {
+    transform: rotate(-100deg);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes anim2 {
+    100% {
+        stroke-dashoffset: 440;
+    }
+}
+
+.body_item {
+    display: flex;
+    width: 353px;
+    height: 83px;
+
+    /* White */
+
+    background: #ffffff;
+    box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
+    border-radius: 12px;
+}
+.body_item .body_item_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ellipse_item {
+    margin: 0 24px;
+    width: 100%;
+    height: 100%;
+}
+.ellipse_item .body .title {
+    margin-top: 38px;
+    margin-bottom: 16px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.ellipse_item .body {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    flex-direction: column;
+}
+.body_item {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    width: 353px;
+    height: 83px;
+    margin-bottom: 12px;
+}
+.skill {
+    margin-top: 11px;
+    margin-left: 16px;
+}
+.content {
+    margin-left: 12px;
+    margin-right: 37px;
+}
+.content .content_desc {
+    height: 21px;
+    display: flex;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.content .content_desc img {
+    margin-right: 5px;
+    width: 14px;
+    color: #ff7506;
+}
+.body_item .content .desc {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height, or 150% */
+    /* Gray/$-gray-400 Text */
+    color: #535261;
+}
+.body_item_right {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 16px;
+}
+.body_item_right .right_desc {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    /* identical to box height, or 175% */
+
+    /* Gray/$-gray-300 */
+
+    color: #7e7d88;
+}
+
+.body_item_right .right_number {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    /* identical to box height, or 129% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.right_desc_box {
+    flex: 1;
+    width: 95px;
+    /* height: 21px; */
+}
+.right_desc_number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.right_desc {
+    position: relative;
+}
+.right_desc::after {
+    position: absolute;
+    left: -7px;
+    top: 8px;
+    content: "";
+    width: 4px;
+    height: 4px;
+    /* Yellow */
+    background: #ffd130;
+    border-radius: 4px;
+}
+
+/* --------------- Ellipse item2 -------------- */
+
+.skill.item2 {
+    width: 65px;
+    height: 65px;
+    /* background: cornflowerblue; */
+    position: relative;
+}
+.outer.item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    /* background: rgb(222, 222, 222);
+    border: 1px solid red; */
+    padding: 5px;
+}
+.inner.item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(255, 255, 255); */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+.number {
+}
+
+circle.item2 {
+    width: 65px;
+    height: 65px;
+    fill: none;
+    stroke: #4277ff;
+    stroke-width: 2px;
+    stroke-dasharray: 252;
+    stroke-dashoffset: 252;
+    animation: anim12 2s linear forwards;
+}
+
+svg.item2 {
+    transform: rotate(-95deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+svg.svg2.item2 {
+    /* transform: rotate(-95deg); */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+@keyframes anim12 {
+    100% {
+        stroke-dashoffset: 106;
+    }
+}
+
+/* ------------- Ellipse2 item2----------------- */
+.skill2.item2 {
+    width: 60px;
+    height: 60px;
+    /* background: cornflowerblue; */
+    position: relative;
+}
+.outer2.item2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* background: rgb(222, 222, 222); */
+    /* border: 1px solid red; */
+    padding: 10px;
+    /* box-shadow: 6px 6px 10px 1px rgba(0, 0, 0, 0.15),
+        -6px -6px 10px -1px rgba(255, 255, 255, 0.7); */
+}
+.inner2.item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background: rgb(255, 255, 255); */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    /* border: 1px solid red; */
+}
+.number.item2 {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height, or 171% */
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+
+circle.circle2.item2 {
+    fill: none;
+    stroke: #7e7d88;
+    stroke-width: 2px;
+    stroke-dasharray: 450;
+    stroke-dashoffset: 450;
+    animation: anim22 2s linear forwards;
+}
+
+svg.svg2.item2 {
+    transform: rotate(-100deg);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+@keyframes anim22 {
+    100% {
+        stroke-dashoffset: 430;
+    }
+}
+.body_item:nth-child(3) .content p {
+    color: #4277ff;
+}
+.body_item:nth-child(3) .right_desc_number p {
+    color: #4277ff;
+}
