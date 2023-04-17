@@ -2,13 +2,17 @@
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
-    width: 100%;
+    width: 1440px;
     height: 810px;
     /* width: 1440px; */
+    /* background: #f7f7f7; */
+    border-radius: 16px;
 }
 .login_left {
     background: #f7f7f7;
     width: calc(1440px - 848px);
+    border-top-left-radius: 16px;
+    border-bottom-left-radius: 16px;
 }
 .login_left_content {
     width: 100%;
