@@ -3,6 +3,10 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "./not_found/NotFound";
 import DashBoard from "./dashboard/dashBoard";
 import Infor from "./Infor_page/inforPage";
+import ThietBi from "./ThietBi/ThietBi";
+import DetailThietbi from "./ThietBi/detail/detailThietbi";
+import CreateThietbi from "./ThietBi/create/createThietbi";
+import EditThietBi from "./ThietBi/edit/editThietBi";
 
 function Pages() {
     return (
@@ -10,6 +14,10 @@ function Pages() {
             {/* <Route path="/" element={<H />} /> */}
             <Route path="/" element={<Infor />} />
             <Route path="/dash" element={<DashBoard />} />
+            <Route path="/thietbi" element={<ThietBi />} />
+            <Route path="/thietbi/:id" element={<DetailThietbi />} />
+            <Route path="/create_thietbi" element={<CreateThietbi />} />
+            <Route path="/update/:id" element={<EditThietBi />} />
 
             {/* <Route
                 path="/register"

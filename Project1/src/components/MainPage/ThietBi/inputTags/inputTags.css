@@ -1,0 +1,127 @@
+.tags-input-wrapper {
+    background: #fff;
+    padding: 0.2em;
+    border: 1px solid #dbdbdb;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    min-height: 36px;
+    box-sizing: border-box;
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+}
+
+.tag-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    margin: 2px;
+    padding: 0;
+    height: 26px;
+    line-height: 26px;
+    cursor: default;
+    box-shadow: 0px 0px 6px #e7e9f2;
+    border-radius: 9px;
+}
+
+.tag-item .titles {
+    width: 100%;
+    height: 100%;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 19px;
+    /* identical to box height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* white */
+
+    color: #ffffff;
+    /* display: block;
+    position: relative; */
+
+    margin: 0 8px;
+}
+
+.tag-item .remove-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* position: relative; */
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+    width: 26px;
+    height: 85%;
+    line-height: 22px;
+    /* text-align: center; */
+    cursor: pointer;
+    font-size: 1.2rem;
+    margin-bottom: 4px;
+}
+
+.color-default {
+    color: rgb(243 244 246);
+    background-color: rgb(156 163 175);
+}
+.color-default button.remove-btn {
+    color: rgb(243 244 246);
+    background-color: rgb(107 114 128);
+}
+
+.color-red {
+    color: rgb(254 226 226);
+    background-color: rgb(248 113 113);
+}
+.color-red button.remove-btn {
+    color: rgb(254 226 226);
+    background-color: rgb(220 38 38) !important;
+}
+
+.color-yellow {
+    color: rgb(254 249 195);
+    background-color: rgb(250 204 21);
+}
+.color-yellow button.remove-btn {
+    color: rgb(254 249 195);
+    background-color: rgb(202 138 4) !important;
+}
+
+.color-green {
+    color: rgb(220 252 231);
+    background-color: rgb(34 197 94);
+}
+.color-green button.remove-btn {
+    color: rgb(220 252 231);
+    background-color: rgb(22 163 74) !important;
+}
+
+.color-blue {
+    color: rgb(224 242 254);
+    background-color: rgb(14 165 233);
+}
+.color-blue button.remove-btn {
+    color: rgb(224 242 254);
+    background-color: rgb(2 132 199) !important;
+}
+.color-orange {
+    color: rgb(224 242 254);
+    background-color: orange;
+}
+.color-orange button.remove-btn {
+    color: rgb(224 242 254);
+    background-color: orange !important;
+}
+.tag-input {
+    color: #495057;
+    flex: 1;
+    background: transparent;
+    border: none;
+}
+
+.tag-input:focus {
+    outline: none;
+}
