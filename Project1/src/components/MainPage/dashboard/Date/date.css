@@ -99,3 +99,6 @@ abbr[title] {
     background: #ff7506;
     color: white;
 }
+.react-calendar button {
+    color: #757575;
+}

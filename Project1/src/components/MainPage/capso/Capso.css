@@ -1,0 +1,19 @@
+.dichvu .Dichvu_item.capso .dropdown {
+    width: 154px;
+    height: 44px;
+}
+.dichvu .Dichvu_item.capso .dropdown .dropdown_box {
+    width: 154px;
+    height: 44px;
+}
+.dichvu .Dichvu_item.capso .input {
+    width: 240px;
+    height: 44px;
+}
+.dichvu .Dichvu_item.capso .input_box {
+    width: 240px;
+    height: 44px;
+}
+.dichvu .Dichvu_item.capso:last-child {
+    margin-left: 5px;
+}

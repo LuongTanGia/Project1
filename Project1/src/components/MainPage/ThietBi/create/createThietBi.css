@@ -157,13 +157,9 @@ button {
     cursor: pointer;
     padding: 9px 15px;
     border-radius: 5px;
-    background: #8cc84c;
     transition: all 0.3s ease;
 }
 
-button:hover {
-    background: #7cac49;
-}
 .btn_box {
     margin-top: 24px;
     gap: 32px;

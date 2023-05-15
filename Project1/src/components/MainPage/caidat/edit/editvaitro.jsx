@@ -4,11 +4,9 @@ import ThongBao from "../../../../assets/img/thongbaosvg.svg";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import shortid from "shortid";
-import InputTags from "../inputTags/inputTags";
-import "./createThietBi.css";
-import TagsInput from "../inputTags/inputTags";
 
-function createThietbi(props) {
+function editvaitro() {
+    const { id } = useParams();
     const [err, setErr] = useState(false);
     // const [text2, setText2] = useState("");
     const handleClick = () => {
@@ -21,51 +19,57 @@ function createThietbi(props) {
     const myStyle2 = {
         display: "none",
     };
+    const [check, setCheck] = useState(false);
 
-    const handleInputChange = (event) => {
-        setName(event.target.value);
+    const [product, setProduct] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3000/vaitro/${id}`)
+            .then((response) => setProduct(response.data))
+            .catch((error) => console.log(error));
+    }, [id]);
+
+    const handleEdit = () => {
+        axios
+            .put(`http://localhost:3000/vaitro/${id}`, product)
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
     };
+    const [chucnang, setchucnang] = useState([]);
+    const [checkedValues, setCheckedValues] = useState([]);
+    function handleCheckboxChange(event) {
+        const target = event.target;
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        const value = target.value;
+        const isChecked = target.checked;
+        const name = target.name;
 
-    const [tenThietBi, setTenTB] = useState("");
-    const [maThietBi, setMaTB] = useState("");
-    const [DiaChi, setDC] = useState("");
-    const [loai, setLoai] = useState("");
-    const [tenDangNhap, setTenDN] = useState("");
-    const [MatKhau, setMK] = useState("");
-    const [DichVu, setDV] = useState("");
+        if (target.value === "all") {
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = target.checked;
+            });
+        }
 
-    const [HD, setHD] = useState(false);
-    const [KN, setKN] = useState(false);
+        if (isChecked) {
+            setCheckedValues((prevCheckedValues) => ({
+                ...prevCheckedValues,
+                [name]: [...(prevCheckedValues[name] || []), value],
+            }));
+        } else {
+            setCheckedValues((prevCheckedValues) => ({
+                ...prevCheckedValues,
+                [name]:
+                    prevCheckedValues[name]?.filter((val) => val !== value) ||
+                    [],
+            }));
+        }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        const product = {
-            id: shortid.generate(),
-            tenThietBi,
-            maThietBi,
-            DiaChi,
-            loai,
-            tenDangNhap,
-            MatKhau,
-            DichVu,
-
-            HD,
-            KN,
-        };
-        axios.post("http://localhost:3000/products", product).then(() => {
-            props.onAddProduct(product);
-            setTenTB("");
-            setMaTB("");
-            setDC("");
-            setLoai("");
-            setTenDN("");
-            setMK("");
-            setDV("");
-            setHD;
-            setKN;
-        });
+        setchucnang((prevCheckedValues) => ({
+            ...prevCheckedValues,
+            [name]: [...(prevCheckedValues[name] || []), value],
+        }));
     }
-    const arr = ["a", "b", "c"];
+
     return (
         <div>
             <div className="header">
@@ -192,136 +196,127 @@ function createThietbi(props) {
                     </div>
                 </div>
             </div>
-            <div className="dichvu">
+            <div className="dichvu ">
                 <h3 className="desc">Quản lý thiết bị</h3>
-                <form onSubmit={handleSubmit} className="Create">
-                    <div className="detail_thietbi create">
-                        <h2 className="desc">Thông tin thiết bị</h2>
+                <form
+                    onSubmit={(event) => {
+                        event.preventDefault();
+                        handleEdit();
+                    }}
+                >
+                    {/* <div>
+                        <h1>Danh sách chức năng</h1>
+                        <h2>Danh sách chức năng của key GRA:</h2>
+                        <ul>
+                            {product.chucnang &&
+                                product.chucnang.GRA &&
+                                product.chucnang.GRA.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                        </ul>
+                        <h2>Danh sách chức năng của key GRB:</h2>
+                        <ul>
+                            {product.chucnang &&
+                                product.chucnang.GRB &&
+                                product.chucnang.GRB.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                        </ul>
+                    </div> */}
+
+                    <div className="detail_thietbi create_vaitro">
+                        <h2 className="desc">Thông tin vai trò</h2>
                         <div className="box_create">
                             <div className="box_create_top">
                                 <div className="box_left">
                                     <div className="create_item">
-                                        <p className="title">Mã thiết bị:</p>
+                                        <p className="title">Tên vai trò</p>
                                         <div className="input_box">
                                             <input
                                                 type="text"
-                                                value={maThietBi}
+                                                value={product.tenvaitro}
                                                 onChange={(e) =>
-                                                    setMaTB(e.target.value)
+                                                    setProduct({
+                                                        ...product,
+                                                        tenvaitro:
+                                                            e.target.value,
+                                                    })
                                                 }
-                                                placeholder="Nhập mã thiết bị"
+                                                placeholder="Nhập mã dịch vụ"
                                                 required
                                             />
                                         </div>
                                     </div>
                                     <div className="create_item">
-                                        <p className="title">Tên thiết bị:</p>
-                                        <div className="input_box">
-                                            <input
+                                        <p className="title">Mô Tả :</p>
+
+                                        <div className="input_box input_mota">
+                                            <textarea
+                                                className="input_mota"
                                                 type="text"
-                                                value={tenThietBi}
+                                                value={product.mota}
                                                 onChange={(e) =>
-                                                    setTenTB(e.target.value)
+                                                    setProduct({
+                                                        ...product,
+                                                        mota: e.target.value,
+                                                    })
                                                 }
-                                                placeholder="Nhập tên thiết bị"
+                                                placeholder="Mô tả dịch vụ "
                                                 required
                                             />
                                         </div>
                                     </div>
-                                    <div className="create_item">
-                                        <p className="title">Địa chỉ IP:</p>
-                                        <div className="input_box">
-                                            <input
-                                                type="text"
-                                                value={DiaChi}
-                                                onChange={(e) =>
-                                                    setDC(e.target.value)
-                                                }
-                                                placeholder="Nhập địa chỉ IP"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
+                                    <p className="note">
+                                        Là trường thông tin bắt buộc
+                                    </p>
                                 </div>
                                 <div className="box_right">
                                     <div className="create_item">
-                                        <p className="title">Loại thiết bị:</p>
-                                        <div className="input_box">
-                                            <select
-                                                className="category"
-                                                name="category"
-                                                value={loai}
-                                                onChange={(e) =>
-                                                    setLoai(e.target.value)
-                                                }
-                                            >
-                                                <option value="Kiosk">
-                                                    Kiosk
-                                                </option>
-
-                                                <option value="Display counter">
-                                                    Display counter
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="create_item">
-                                        <p className="title">Tên đăng nhập:</p>
-                                        <div className="input_box">
-                                            <input
-                                                type="text"
-                                                value={tenDangNhap}
-                                                onChange={(e) =>
-                                                    setTenDN(e.target.value)
-                                                }
-                                                placeholder="Nhập tài khoản"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="create_item">
-                                        <p className="title">Mật khẩu:</p>
-                                        <div className="input_box">
-                                            <input
-                                                type="text"
-                                                value={MatKhau}
-                                                onChange={(e) =>
-                                                    setMK(e.target.value)
-                                                }
-                                                placeholder="Nhập mật khẩu"
-                                                required
-                                            />
+                                        <p className="title">
+                                            Phân quyền chức năng
+                                        </p>
+                                        <div className="phanquyen_box">
+                                            <div className="group_check">
+                                                <h1 className="title">
+                                                    Nhóm chức năng A
+                                                </h1>
+                                                <label>
+                                                    <input
+                                                        type="checkbox"
+                                                        name="GRA"
+                                                        value="all"
+                                                        onChange={
+                                                            handleCheckboxChange
+                                                        }
+                                                    />{" "}
+                                                    Tất Cả
+                                                </label>
+                                                {product.chucnang &&
+                                                    product.chucnang.GRA &&
+                                                    product.chucnang.GRA.map(
+                                                        (item) => (
+                                                            <label>
+                                                                <input
+                                                                    type="checkbox"
+                                                                    name="GRA"
+                                                                    onChange={
+                                                                        handleCheckboxChange
+                                                                    }
+                                                                />
+                                                                {item}
+                                                            </label>
+                                                        )
+                                                    )}
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="create_item item_bottom_create">
-                                <p className="title">Dịch vụ sử dụng:</p>
-
-                                {/* <input
-                                        type="text"
-                                        value={DichVu}
-                                        onChange={(e) => setDV(e.target.value)}
-                                        placeholder="Nhập dịch vụ sử dụng"
-                                    /> */}
-                                {/* <TagsInput
-                                        type="text"
-                                        value={DichVu}
-                                        values={["Kham Benh"]}
-                                        onChange={(e) => setDV(e.target.value)}
-                                    /> */}
-                                <TagsInput
-                                    color="orange"
-                                    values={[arr]}
-                                    onChange={(tags) => setDV(tags)}
-                                />
-                            </div>
-                            <p className="note">Là trường thông tin bắt buộc</p>
                         </div>
                     </div>
                     <div className="btn_box">
                         <button type="submit" className="btn_create">
-                            Thêm Thiết Bị
+                            Cập Nhật
                         </button>
                         <Link to="/thietbi" className="btn_create none">
                             Hủy Bỏ
@@ -333,4 +328,4 @@ function createThietbi(props) {
     );
 }
 
-export default createThietbi;
+export default editvaitro;

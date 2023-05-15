@@ -3,12 +3,9 @@ import Avatar from "../../../../assets/img/img_infor.svg";
 import ThongBao from "../../../../assets/img/thongbaosvg.svg";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import shortid from "shortid";
-import InputTags from "../inputTags/inputTags";
-import "./createThietBi.css";
-import TagsInput from "../inputTags/inputTags";
 
-function createThietbi(props) {
+function edittaikhoan() {
+    const { id } = useParams();
     const [err, setErr] = useState(false);
     // const [text2, setText2] = useState("");
     const handleClick = () => {
@@ -21,51 +18,35 @@ function createThietbi(props) {
     const myStyle2 = {
         display: "none",
     };
+    const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-    const handleInputChange = (event) => {
-        setName(event.target.value);
+    const togglePasswordVisibility = () => {
+        setIsPasswordVisible(!isPasswordVisible);
+    };
+    const [vaitrolis, setvaitrolis] = useState([]);
+
+    useEffect(() => {
+        async function fetchData() {
+            const result = await axios("http://localhost:3000/vaitro");
+            setvaitrolis(result.data);
+        }
+        fetchData();
+    }, []);
+    const [product, setProduct] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`http://localhost:3000/user/${id}`)
+            .then((response) => setProduct(response.data))
+            .catch((error) => console.log(error));
+    }, [id]);
+
+    const handleEdit = () => {
+        axios
+            .put(`http://localhost:3000/user/${id}`, product)
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
     };
 
-    const [tenThietBi, setTenTB] = useState("");
-    const [maThietBi, setMaTB] = useState("");
-    const [DiaChi, setDC] = useState("");
-    const [loai, setLoai] = useState("");
-    const [tenDangNhap, setTenDN] = useState("");
-    const [MatKhau, setMK] = useState("");
-    const [DichVu, setDV] = useState("");
-
-    const [HD, setHD] = useState(false);
-    const [KN, setKN] = useState(false);
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        const product = {
-            id: shortid.generate(),
-            tenThietBi,
-            maThietBi,
-            DiaChi,
-            loai,
-            tenDangNhap,
-            MatKhau,
-            DichVu,
-
-            HD,
-            KN,
-        };
-        axios.post("http://localhost:3000/products", product).then(() => {
-            props.onAddProduct(product);
-            setTenTB("");
-            setMaTB("");
-            setDC("");
-            setLoai("");
-            setTenDN("");
-            setMK("");
-            setDV("");
-            setHD;
-            setKN;
-        });
-    }
-    const arr = ["a", "b", "c"];
     return (
         <div>
             <div className="header">
@@ -194,87 +175,108 @@ function createThietbi(props) {
             </div>
             <div className="dichvu">
                 <h3 className="desc">Quản lý thiết bị</h3>
-                <form onSubmit={handleSubmit} className="Create">
+                <form
+                    onSubmit={(event) => {
+                        event.preventDefault();
+                        handleEdit();
+                    }}
+                >
                     <div className="detail_thietbi create">
                         <h2 className="desc">Thông tin thiết bị</h2>
                         <div className="box_create">
                             <div className="box_create_top">
                                 <div className="box_left">
                                     <div className="create_item">
-                                        <p className="title">Mã thiết bị:</p>
+                                        <p className="title">Họ tên</p>
                                         <div className="input_box">
                                             <input
                                                 type="text"
-                                                value={maThietBi}
+                                                value={product.hoten}
                                                 onChange={(e) =>
-                                                    setMaTB(e.target.value)
+                                                    setProduct({
+                                                        ...product,
+                                                        hoten: e.target.value,
+                                                    })
                                                 }
-                                                placeholder="Nhập mã thiết bị"
+                                                placeholder="Nhập họ tên"
                                                 required
                                             />
                                         </div>
                                     </div>
                                     <div className="create_item">
-                                        <p className="title">Tên thiết bị:</p>
+                                        <p className="title">Số điện thoại</p>
                                         <div className="input_box">
                                             <input
                                                 type="text"
-                                                value={tenThietBi}
+                                                value={product.sdt}
                                                 onChange={(e) =>
-                                                    setTenTB(e.target.value)
+                                                    setProduct({
+                                                        ...product,
+                                                        sdt: e.target.value,
+                                                    })
                                                 }
-                                                placeholder="Nhập tên thiết bị"
+                                                placeholder="Nhập số điện thoại"
                                                 required
                                             />
                                         </div>
                                     </div>
                                     <div className="create_item">
-                                        <p className="title">Địa chỉ IP:</p>
+                                        <p className="title">Email</p>
                                         <div className="input_box">
                                             <input
-                                                type="text"
-                                                value={DiaChi}
+                                                type="email"
+                                                value={product.email}
                                                 onChange={(e) =>
-                                                    setDC(e.target.value)
+                                                    setProduct({
+                                                        ...product,
+                                                        email: e.target.value,
+                                                    })
                                                 }
-                                                placeholder="Nhập địa chỉ IP"
+                                                placeholder="Nhập email"
                                                 required
                                             />
+                                        </div>
+                                    </div>
+                                    <div className="create_item">
+                                        <p className="title">Vai trò</p>
+                                        <div className="input_box">
+                                            <select
+                                                className="category"
+                                                name="category"
+                                                value={product.vaitro}
+                                                onChange={(e) =>
+                                                    setProduct({
+                                                        ...product,
+                                                        vaitro: e.target.value,
+                                                    })
+                                                }
+                                            >
+                                                {vaitrolis.map((item) => (
+                                                    <option
+                                                        value={item.tenvaitro}
+                                                    >
+                                                        {item.tenvaitro}
+                                                    </option>
+                                                ))}
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="box_right">
                                     <div className="create_item">
-                                        <p className="title">Loại thiết bị:</p>
-                                        <div className="input_box">
-                                            <select
-                                                className="category"
-                                                name="category"
-                                                value={loai}
-                                                onChange={(e) =>
-                                                    setLoai(e.target.value)
-                                                }
-                                            >
-                                                <option value="Kiosk">
-                                                    Kiosk
-                                                </option>
-
-                                                <option value="Display counter">
-                                                    Display counter
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="create_item">
                                         <p className="title">Tên đăng nhập:</p>
                                         <div className="input_box">
                                             <input
                                                 type="text"
-                                                value={tenDangNhap}
+                                                value={product.tenDangNhap}
                                                 onChange={(e) =>
-                                                    setTenDN(e.target.value)
+                                                    setProduct({
+                                                        ...product,
+                                                        tenDangNhap:
+                                                            e.target.value,
+                                                    })
                                                 }
-                                                placeholder="Nhập tài khoản"
+                                                placeholder="Nhập tên đăng nhập"
                                                 required
                                             />
                                         </div>
@@ -283,45 +285,115 @@ function createThietbi(props) {
                                         <p className="title">Mật khẩu:</p>
                                         <div className="input_box">
                                             <input
-                                                type="text"
-                                                value={MatKhau}
-                                                onChange={(e) =>
-                                                    setMK(e.target.value)
+                                                type={
+                                                    isPasswordVisible
+                                                        ? "text"
+                                                        : "password"
                                                 }
-                                                placeholder="Nhập mật khẩu"
-                                                required
+                                                value={product.password}
+                                                onChange={(e) =>
+                                                    setProduct({
+                                                        ...product,
+                                                        password:
+                                                            e.target.value,
+                                                    })
+                                                }
+                                                id="password"
+                                                name="password"
+                                                placeholder="Password"
                                             />
+                                            <span id="showPassword_user">
+                                                <ion-icon
+                                                    name={
+                                                        isPasswordVisible
+                                                            ? "eye-outline"
+                                                            : "eye-off-outline"
+                                                    }
+                                                    onClick={
+                                                        togglePasswordVisibility
+                                                    }
+                                                ></ion-icon>
+                                                {/* <ion-icon name="eye-outline"></ion-icon> */}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="create_item">
+                                        <p className="title">
+                                            Nhập lại mật khẩu:
+                                        </p>
+                                        <div className="input_box">
+                                            <input
+                                                type={
+                                                    isPasswordVisible
+                                                        ? "text"
+                                                        : "password"
+                                                }
+                                                value={product.confirmPassword}
+                                                onChange={(e) =>
+                                                    setProduct({
+                                                        ...product,
+                                                        confirmPassword:
+                                                            e.target.value,
+                                                    })
+                                                }
+                                                id="password"
+                                                name="password"
+                                                placeholder="Password"
+                                            />
+                                            <span id="showPassword_user">
+                                                <ion-icon
+                                                    name={
+                                                        isPasswordVisible
+                                                            ? "eye-outline"
+                                                            : "eye-off-outline"
+                                                    }
+                                                    onClick={
+                                                        togglePasswordVisibility
+                                                    }
+                                                ></ion-icon>
+                                                {/* <ion-icon name="eye-outline"></ion-icon> */}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div className="create_item">
+                                        <p className="title">Tình trạng</p>
+                                        <div className="input_box">
+                                            <select
+                                                className="category"
+                                                name="category"
+                                                value={product.trangthai}
+                                                onChange={(e) =>
+                                                    setProduct({
+                                                        ...product,
+                                                        trangthai:
+                                                            e.target.value ===
+                                                            "true"
+                                                                ? true
+                                                                : false,
+                                                    })
+                                                }
+                                            >
+                                                <option value="" selected>
+                                                    Tất cả
+                                                </option>
+                                                <option value="true">
+                                                    Hoạt động
+                                                </option>
+                                                <option value="false">
+                                                    Ngưng hoạt động
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="create_item item_bottom_create">
-                                <p className="title">Dịch vụ sử dụng:</p>
 
-                                {/* <input
-                                        type="text"
-                                        value={DichVu}
-                                        onChange={(e) => setDV(e.target.value)}
-                                        placeholder="Nhập dịch vụ sử dụng"
-                                    /> */}
-                                {/* <TagsInput
-                                        type="text"
-                                        value={DichVu}
-                                        values={["Kham Benh"]}
-                                        onChange={(e) => setDV(e.target.value)}
-                                    /> */}
-                                <TagsInput
-                                    color="orange"
-                                    values={[arr]}
-                                    onChange={(tags) => setDV(tags)}
-                                />
-                            </div>
                             <p className="note">Là trường thông tin bắt buộc</p>
                         </div>
                     </div>
                     <div className="btn_box">
                         <button type="submit" className="btn_create">
-                            Thêm Thiết Bị
+                            Cập Nhật
                         </button>
                         <Link to="/thietbi" className="btn_create none">
                             Hủy Bỏ
@@ -333,4 +405,4 @@ function createThietbi(props) {
     );
 }
 
-export default createThietbi;
+export default edittaikhoan;

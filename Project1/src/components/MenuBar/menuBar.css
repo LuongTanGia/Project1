@@ -21,12 +21,10 @@
 .Menu li a {
     margin-left: 16px;
 }
-.Menu li:hover {
-    background: #fff2e7;
-}
-.Menu li:hover a {
+
+/* .Menu li:hover a.menu_item {
     color: #ff7506;
-}
+} */
 .Menu a:hover .img_item {
     color: #ff7506;
 }
@@ -58,8 +56,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 14.5px;
-    /* Orange/$-Orange-50 */
+    gap: 14px;
     background: #fff2e7;
     border-radius: 8px;
     margin-top: 264px;
@@ -68,9 +65,69 @@
     font-weight: 600;
     font-size: 16px;
     line-height: 24px;
+    color: #ff7506;
+}
+.menu_item:last-child.li_dropdown {
+    position: relative;
+}
+.dropdown_menu {
+    position: absolute;
+    z-index: 10000;
+    top: 0px;
+    right: -200px;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+    height: 144px !important;
+    background: #ffffff;
+    overflow-y: hidden !important;
+    overflow: hidden;
+    border-radius: 0 12px 12px 0;
+    border: none;
+    filter: drop-shadow(3px 3px 4px rgba(70, 64, 67, 0.1));
+}
+
+.dropdown_menu .drop_link {
+    padding-left: 12px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    margin: 0 !important;
+
+    background: #ffffff;
+}
+.dropdown_menu .drop_link:hover {
+    color: #ff7506;
+    background: #fff2e7;
+}
+.active,
+li:hover {
+    background: #ff7506;
+    color: #ffffff;
+}
+.active,
+li:hover a.menu_item {
+    color: #ffffff !important;
+}
+.active a.menu_item {
+    color: #ffffff !important;
+}
+
+.drop_link {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
     /* identical to box height, or 150% */
 
-    /* Orange/$-Orange-500 */
+    /* Gray/$-gray-300 */
 
-    color: #ff7506;
+    color: #7e7d88;
+}
+.drop_link:hover {
+    background: #ff9138 !important;
+    color: #ffffff !important;
 }

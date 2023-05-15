@@ -7,7 +7,7 @@ import axios from "axios";
 import shortid from "shortid";
 function ThietBi() {
     const [err, setErr] = useState(false);
-    // const [text2, setText2] = useState("");
+
     const handleClick = () => {
         setErr(!err);
     };
@@ -20,13 +20,6 @@ function ThietBi() {
     };
     const [data, setData] = useState([]);
 
-    // useEffect(() => {
-    //     // Make an API call when the component mounts
-    //     fetch("http://localhost:3000/products")
-    //         .then((response) => response.json())
-    //         .then((data) => setData(data))
-    //         .catch((error) => console.log(error));
-    // }, []);
     useEffect(() => {
         async function fetchData() {
             const result = await axios("http://localhost:3000/products");
@@ -35,7 +28,75 @@ function ThietBi() {
         fetchData();
     }, []);
 
-    console.log(data);
+    const [isKNActive, setIsKNActive] = useState(null);
+    const [isActive, setIsActive] = useState(null);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [filteredData, setFilteredData] = useState([]);
+
+    function handleInputChange(event) {
+        const value = event.target.value;
+        setSearchTerm(value);
+        filterData(isActive, value, isKNActive);
+    }
+
+    function handleHDToggle(event) {
+        const value = event.target.value;
+        let newIsActive;
+
+        if (value === "true") {
+            newIsActive = true;
+            setIsKNActive(null);
+        } else if (value === "false") {
+            newIsActive = false;
+            setIsKNActive(null);
+        } else {
+            newIsActive = null;
+        }
+
+        setIsActive(newIsActive);
+        filterData(newIsActive, searchTerm, isKNActive);
+    }
+
+    function handleKNToggle(event) {
+        const value = event.target.value;
+        let newIsKNActive;
+
+        if (value === "true") {
+            newIsKNActive = true;
+        } else if (value === "false") {
+            newIsKNActive = false;
+        } else {
+            newIsKNActive = null;
+        }
+
+        setIsKNActive(newIsKNActive);
+        filterData(isActive, searchTerm, newIsKNActive);
+    }
+
+    function filterData(isActive, searchTerm, isKNActive) {
+        const newFilteredData = data.filter(
+            (product) =>
+                (isActive === null &&
+                    searchTerm === "" &&
+                    isKNActive === null) ||
+                (isActive === null &&
+                    product.maThietBi
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase()) &&
+                    product.KN === isKNActive) ||
+                (product.HD === isActive &&
+                    searchTerm === "" &&
+                    isKNActive === null) ||
+                (product.HD === isActive &&
+                    product.maThietBi
+                        .toLowerCase()
+                        .includes(searchTerm.toLowerCase()) &&
+                    product.KN === isKNActive)
+        );
+
+        setFilteredData(newFilteredData);
+    }
+
     function ShowMore({ text }) {
         const [showAll, setShowAll] = useState(false);
 
@@ -58,14 +119,12 @@ function ThietBi() {
 
     const itemsPerPage = 10;
     const [currentPage, setCurrentPage] = useState(1);
-
     // Tính toán tổng số trang
-    const totalPages = Math.ceil(data.length / itemsPerPage);
-
+    const totalPages = Math.ceil(filteredData.length / itemsPerPage);
     // Lấy danh sách các mục cần hiển thị cho trang hiện tại
     const startIndex = (currentPage - 1) * itemsPerPage;
     const endIndex = startIndex + itemsPerPage;
-    const currentItems = data.slice(startIndex, endIndex);
+    const currentItems = filteredData.slice(startIndex, endIndex);
 
     // Cập nhật trang hiện tại khi người dùng chuyển đổi trang
     const handlePageChange = (pageNumber) => {
@@ -205,25 +264,36 @@ function ThietBi() {
                     <div className="Dichvu_item">
                         <p className="desc">Trạng thái hoạt động</p>
                         <div className="dropdown">
-                            <select class="dropdown_box">
-                                <option selected>Tất cả</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select
+                                class="dropdown_box"
+                                value={isActive}
+                                onChange={handleHDToggle}
+                            >
+                                <option selected value="">
+                                    Tất cả
+                                </option>
+                                <option value={true}>Hoạt Động</option>
+                                <option value={false}>Ngưng Hoạt Động</option>
                             </select>
                         </div>
                     </div>
                     <div className="Dichvu_item">
                         <p className="desc">Trạng thái hoạt động</p>
                         <div className="dropdown">
-                            <select class="dropdown_box">
-                                <option selected>Tất cả</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select
+                                class="dropdown_box"
+                                value={isKNActive}
+                                onChange={handleKNToggle}
+                            >
+                                <option selected value="">
+                                    Tất cả
+                                </option>
+                                <option value="true">Kết Nối</option>
+                                <option value="false">Mất Kết Nối</option>
                             </select>
                         </div>
                     </div>
+
                     <div className="Dichvu_item">
                         <p className="desc">Từ khoá</p>
                         <div className="input">
@@ -231,6 +301,8 @@ function ThietBi() {
                                 type="text"
                                 placeholder="Nhập từ khóa"
                                 className="input_box"
+                                value={searchTerm}
+                                onChange={handleInputChange}
                             />
                         </div>
                     </div>
@@ -249,52 +321,117 @@ function ThietBi() {
                                 <th></th>
                             </tr>
                         </thead>
-                        <tbody>
-                            {currentItems.map((data) => (
-                                <tr className="tb_item">
-                                    <td className="td_item">
-                                        <p>{data.maThietBi}</p>
-                                    </td>
-                                    <td className="td_item">
-                                        <p>{data.tenThietBi}</p>
-                                    </td>
-                                    <td className="td_item">
-                                        <p>{data.DiaChi}</p>
-                                    </td>
-                                    <td
-                                        className={`td_item ${
-                                            data.HD ? "success" : "err"
-                                        }`}
-                                    >
-                                        <p>{data.TragThaiHD}</p>
-                                    </td>
-                                    <td
-                                        className={`td_item ${
-                                            data.KN ? "success" : "err"
-                                        }`}
-                                    >
-                                        <p>{data.TragThaiKN}</p>
-                                    </td>
-                                    <td className="td_item">
-                                        <p>
-                                            <ShowMore
-                                                text={String(data.DichVu)}
-                                            />
-                                        </p>
-                                    </td>
-                                    <td className="td_item">
-                                        <Link to={`/thietbi/${data.id}`}>
-                                            Chi Tiết
-                                        </Link>
-                                    </td>
-                                    <td className="td_item">
-                                        <Link to={`/update/${data.id}`}>
-                                            Cập Nhật
-                                        </Link>
-                                    </td>
-                                </tr>
-                            ))}
-                        </tbody>
+                        {currentItems.length > 0 ? (
+                            <tbody>
+                                {currentItems.map((data) => (
+                                    <tr className="tb_item">
+                                        <td className="td_item">
+                                            <p>{data.maThietBi}</p>
+                                        </td>
+                                        <td className="td_item">
+                                            <p>{data.tenThietBi}</p>
+                                        </td>
+                                        <td className="td_item">
+                                            <p>{data.DiaChi}</p>
+                                        </td>
+                                        <td
+                                            className={`td_item ${
+                                                data.HD ? "success" : "err"
+                                            }`}
+                                        >
+                                            <p>
+                                                {data.HD
+                                                    ? "Hoạt Động"
+                                                    : "Ngưng Hoạt Động"}
+                                            </p>
+                                        </td>
+                                        <td
+                                            className={`td_item ${
+                                                data.KN ? "success" : "err"
+                                            }`}
+                                        >
+                                            <p>
+                                                {data.KN
+                                                    ? "Kết Nối"
+                                                    : "Mất Kết Nối"}
+                                            </p>
+                                        </td>
+                                        <td className="td_item">
+                                            <p>
+                                                <ShowMore
+                                                    text={String(data.DichVu)}
+                                                />
+                                            </p>
+                                        </td>
+                                        <td className="td_item">
+                                            <Link to={`/thietbi/${data.id}`}>
+                                                Chi Tiết
+                                            </Link>
+                                        </td>
+                                        <td className="td_item">
+                                            <Link to={`/update/${data.id}`}>
+                                                Cập Nhật
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        ) : (
+                            <tbody>
+                                {data.map((data) => (
+                                    <tr className="tb_item">
+                                        <td className="td_item">
+                                            <p>{data.maThietBi}</p>
+                                        </td>
+                                        <td className="td_item">
+                                            <p>{data.tenThietBi}</p>
+                                        </td>
+                                        <td className="td_item">
+                                            <p>{data.DiaChi}</p>
+                                        </td>
+                                        <td
+                                            className={`td_item ${
+                                                data.HD ? "success" : "err"
+                                            }`}
+                                        >
+                                            <p>
+                                                {data.HD
+                                                    ? "Hoạt Động"
+                                                    : "Ngưng Hoạt Động"}
+                                            </p>
+                                        </td>
+                                        <td
+                                            className={`td_item ${
+                                                data.KN ? "success" : "err"
+                                            }`}
+                                        >
+                                            <p>
+                                                {data.KN
+                                                    ? "Kết Nối"
+                                                    : "Mất Kết Nối"}
+                                            </p>
+                                        </td>
+                                        <td className="td_item">
+                                            <p>
+                                                <ShowMore
+                                                    text={String(data.DichVu)}
+                                                />
+                                            </p>
+                                        </td>
+                                        <td className="td_item">
+                                            <Link to={`/thietbi/${data.id}`}>
+                                                Chi Tiết
+                                            </Link>
+                                        </td>
+                                        <td className="td_item">
+                                            <Link to={`/update/${data.id}`}>
+                                                Cập Nhật
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        )}
                     </table>
                 </div>
                 <div className="Pagination">

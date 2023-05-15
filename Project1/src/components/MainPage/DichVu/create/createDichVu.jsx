@@ -4,11 +4,10 @@ import ThongBao from "../../../../assets/img/thongbaosvg.svg";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import shortid from "shortid";
-import InputTags from "../inputTags/inputTags";
-import "./createThietBi.css";
-import TagsInput from "../inputTags/inputTags";
 
-function createThietbi(props) {
+import "./createDichVu.css";
+
+function createdichvu(props) {
     const [err, setErr] = useState(false);
     // const [text2, setText2] = useState("");
     const handleClick = () => {
@@ -22,50 +21,44 @@ function createThietbi(props) {
         display: "none",
     };
 
-    const handleInputChange = (event) => {
-        setName(event.target.value);
-    };
-
-    const [tenThietBi, setTenTB] = useState("");
-    const [maThietBi, setMaTB] = useState("");
-    const [DiaChi, setDC] = useState("");
-    const [loai, setLoai] = useState("");
-    const [tenDangNhap, setTenDN] = useState("");
-    const [MatKhau, setMK] = useState("");
-    const [DichVu, setDV] = useState("");
-
-    const [HD, setHD] = useState(false);
-    const [KN, setKN] = useState(false);
+    const [maDichVu, setmaDichVu] = useState("");
+    const [tenDichVu, settenDichVu] = useState("");
+    const [Mota, setMota] = useState("");
+    const [TT, setTT] = useState(false);
+    const [trangthai, settrangthai] = useState("Mất kết nối");
+    const [tangtudong, settangtudong] = useState(false);
+    const [Prefix, setPrefix] = useState(false);
+    const [Surfix, setSurfix] = useState(false);
+    const [Reset, setReset] = useState(false);
 
     function handleSubmit(event) {
         event.preventDefault();
         const product = {
             id: shortid.generate(),
-            tenThietBi,
-            maThietBi,
-            DiaChi,
-            loai,
-            tenDangNhap,
-            MatKhau,
-            DichVu,
-
-            HD,
-            KN,
+            tenDichVu,
+            maDichVu,
+            Mota,
+            TT,
+            trangthai,
+            tangtudong,
+            Prefix,
+            Surfix,
+            Reset,
         };
-        axios.post("http://localhost:3000/products", product).then(() => {
+        axios.post("http://localhost:3000/dichvu", product).then(() => {
             props.onAddProduct(product);
-            setTenTB("");
-            setMaTB("");
-            setDC("");
-            setLoai("");
-            setTenDN("");
-            setMK("");
-            setDV("");
-            setHD;
-            setKN;
+            setmaDichVu("");
+            settenDichVu("");
+            setMota("");
+            settrangthai("");
+            setTT;
+            settangtudong;
+            setPrefix;
+            setSurfix;
+            setReset;
         });
     }
-    const arr = ["a", "b", "c"];
+
     return (
         <div>
             <div className="header">
@@ -193,51 +186,37 @@ function createThietbi(props) {
                 </div>
             </div>
             <div className="dichvu">
-                <h3 className="desc">Quản lý thiết bị</h3>
+                <h3 className="desc">Quản lý dịch vụ</h3>
                 <form onSubmit={handleSubmit} className="Create">
                     <div className="detail_thietbi create">
-                        <h2 className="desc">Thông tin thiết bị</h2>
+                        <h2 className="desc">Thông tin dịch vụ</h2>
                         <div className="box_create">
                             <div className="box_create_top">
                                 <div className="box_left">
                                     <div className="create_item">
-                                        <p className="title">Mã thiết bị:</p>
+                                        <p className="title">Mã dịch vụ:</p>
                                         <div className="input_box">
                                             <input
                                                 type="text"
-                                                value={maThietBi}
+                                                value={maDichVu}
                                                 onChange={(e) =>
-                                                    setMaTB(e.target.value)
+                                                    setmaDichVu(e.target.value)
                                                 }
-                                                placeholder="Nhập mã thiết bị"
+                                                placeholder="Nhập mã dịch vụ"
                                                 required
                                             />
                                         </div>
                                     </div>
                                     <div className="create_item">
-                                        <p className="title">Tên thiết bị:</p>
+                                        <p className="title">Tên dịch vụ:</p>
                                         <div className="input_box">
                                             <input
                                                 type="text"
-                                                value={tenThietBi}
+                                                value={tenDichVu}
                                                 onChange={(e) =>
-                                                    setTenTB(e.target.value)
+                                                    settenDichVu(e.target.value)
                                                 }
-                                                placeholder="Nhập tên thiết bị"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="create_item">
-                                        <p className="title">Địa chỉ IP:</p>
-                                        <div className="input_box">
-                                            <input
-                                                type="text"
-                                                value={DiaChi}
-                                                onChange={(e) =>
-                                                    setDC(e.target.value)
-                                                }
-                                                placeholder="Nhập địa chỉ IP"
+                                                placeholder="Nhập tên dịch vụ"
                                                 required
                                             />
                                         </div>
@@ -245,50 +224,16 @@ function createThietbi(props) {
                                 </div>
                                 <div className="box_right">
                                     <div className="create_item">
-                                        <p className="title">Loại thiết bị:</p>
-                                        <div className="input_box">
-                                            <select
-                                                className="category"
-                                                name="category"
-                                                value={loai}
-                                                onChange={(e) =>
-                                                    setLoai(e.target.value)
-                                                }
-                                            >
-                                                <option value="Kiosk">
-                                                    Kiosk
-                                                </option>
-
-                                                <option value="Display counter">
-                                                    Display counter
-                                                </option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div className="create_item">
-                                        <p className="title">Tên đăng nhập:</p>
-                                        <div className="input_box">
-                                            <input
+                                        <p className="title">Mô Tả :</p>
+                                        <div className="input_box input_mota">
+                                            <textarea
+                                                className="input_mota"
                                                 type="text"
-                                                value={tenDangNhap}
+                                                value={Mota}
                                                 onChange={(e) =>
-                                                    setTenDN(e.target.value)
+                                                    setMota(e.target.value)
                                                 }
-                                                placeholder="Nhập tài khoản"
-                                                required
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="create_item">
-                                        <p className="title">Mật khẩu:</p>
-                                        <div className="input_box">
-                                            <input
-                                                type="text"
-                                                value={MatKhau}
-                                                onChange={(e) =>
-                                                    setMK(e.target.value)
-                                                }
-                                                placeholder="Nhập mật khẩu"
+                                                placeholder="Mô tả dịch vụ "
                                                 required
                                             />
                                         </div>
@@ -296,25 +241,76 @@ function createThietbi(props) {
                                 </div>
                             </div>
                             <div className="create_item item_bottom_create">
-                                <p className="title">Dịch vụ sử dụng:</p>
-
-                                {/* <input
-                                        type="text"
-                                        value={DichVu}
-                                        onChange={(e) => setDV(e.target.value)}
-                                        placeholder="Nhập dịch vụ sử dụng"
-                                    /> */}
-                                {/* <TagsInput
-                                        type="text"
-                                        value={DichVu}
-                                        values={["Kham Benh"]}
-                                        onChange={(e) => setDV(e.target.value)}
-                                    /> */}
-                                <TagsInput
-                                    color="orange"
-                                    values={[arr]}
-                                    onChange={(tags) => setDV(tags)}
-                                />
+                                <div className="bottom_detail box_create">
+                                    <h2 className="desc_dichvu">
+                                        Quy tắc cấp số
+                                    </h2>
+                                    <div className="detail_box">
+                                        <div className="box-capso box_create">
+                                            <input
+                                                type="checkbox"
+                                                value={tangtudong}
+                                                onChange={(e) =>
+                                                    settangtudong(
+                                                        e.target.checked
+                                                    )
+                                                }
+                                            />
+                                            <p className="title_capso">
+                                                Tăng tự động:{" "}
+                                            </p>
+                                            <button className="capso">
+                                                0001
+                                            </button>
+                                            <p className="title_capso">đến</p>
+                                            <button className="capso">
+                                                9999
+                                            </button>
+                                        </div>
+                                        <div className="box-capso box_create">
+                                            <input
+                                                type="checkbox"
+                                                value={Prefix}
+                                                onChange={(e) =>
+                                                    setPrefix(e.target.checked)
+                                                }
+                                            />
+                                            <p className="title_capso">
+                                                Prefix:
+                                            </p>
+                                            <button className="capso">
+                                                0001
+                                            </button>
+                                        </div>
+                                        <div className="box-capso box_create">
+                                            <input
+                                                type="checkbox"
+                                                value={Surfix}
+                                                onChange={(e) =>
+                                                    setPrefix(e.target.checked)
+                                                }
+                                            />
+                                            <p className="title_capso">
+                                                Surfix:
+                                            </p>
+                                            <button className="capso">
+                                                0001
+                                            </button>
+                                        </div>
+                                        <div className="box-capso box_create">
+                                            <input
+                                                type="checkbox"
+                                                value={Reset}
+                                                onChange={(e) =>
+                                                    setReset(e.target.checked)
+                                                }
+                                            />
+                                            <p className="title_capso">
+                                                Reset mỗi ngày
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <p className="note">Là trường thông tin bắt buộc</p>
                         </div>
@@ -333,4 +329,4 @@ function createThietbi(props) {
     );
 }
 
-export default createThietbi;
+export default createdichvu;

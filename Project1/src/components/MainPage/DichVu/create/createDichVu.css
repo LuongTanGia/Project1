@@ -1,0 +1,32 @@
+.detail_box .box-capso input {
+    width: 20px;
+    height: 20px;
+    background: #ffffff;
+    outline: none;
+
+    border: 1.5px solid #4277ff !important;
+    border-radius: 4px;
+}
+.bottom_detail.box_create .detail_box .box_create {
+    width: 337px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 8px;
+}
+.bottom_detail.box_create .detail_box .box_create:nth-child(2) button,
+.bottom_detail.box_create .detail_box .box_create:nth-child(3) button {
+    margin-left: 55px;
+}
+.create_item .input_mota {
+    width: 553px;
+    height: 132px;
+
+    /* white */
+
+    background: #ffffff;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+}

@@ -4,19 +4,7 @@
     align-items: center;
     gap: 15.5px;
 }
-.header_left h3,
-span {
-    font-family: "Nunito";
-    font-style: normal;
-    font-weight: 700;
-    font-size: 20px;
-    line-height: 30px;
-    /* identical to box height, or 150% */
-
-    /* gray blue/gray 4 - place holder */
-
-    color: #7e7d88;
-}
+/* */
 
 .dichvu h3.desc {
     font-family: "Nunito";
@@ -169,10 +157,7 @@ span {
 .dichvu_table tbody tr td p {
     height: 24px !important;
 }
-.dichvu_table tbody td:nth-of-type(7),
-.dichvu_table tbody td:nth-of-type(8) {
-    width: 90px;
-}
+
 .table td {
     /* padding-top: 24px; */
 

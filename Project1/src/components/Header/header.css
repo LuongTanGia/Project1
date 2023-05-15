@@ -68,6 +68,7 @@
 }
 .Menu_thongbao {
     position: absolute;
+    z-index: 10000;
     /* overflow-y: scroll; */
     /* overflow-x: hidden; */
     box-shadow: 2px 2px 15px rgba(70, 64, 67, 0.1);
