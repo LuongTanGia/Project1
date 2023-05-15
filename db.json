@@ -1,0 +1,561 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "maThietBi": "KIO_01",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": true,
+            "KN": true,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 2,
+            "maThietBi": "KIO_02",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": false,
+            "KN": true,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 3,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": true,
+            "KN": true,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 4,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": true,
+            "KN": false,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 5,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": false,
+            "KN": false,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 6,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": true,
+            "KN": false,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 7,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": false,
+            "KN": true,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 8,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "TragThaiHD": "Hoạt động",
+            "HD": false,
+            "KN": false,
+            "TragThaiKN": "Mất kết nối",
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": 9,
+            "maThietBi": "KIO_03",
+            "tenThietBi": "Kiosk",
+            "DiaChi": "192.168.1.10",
+            "HD": false,
+            "KN": true,
+            "tenDangNhap": "LuongTanGia3",
+            "MatKhau": "Gia123",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát"
+        },
+        {
+            "id": "9wMEq1mFU",
+            "tenThietBi": "LTGia",
+            "maThietBi": "TANGIA@2",
+            "DiaChi": "333.222.111",
+            "loai": "TỐT",
+            "tenDangNhap": "TEST1",
+            "MatKhau": "123456",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát",
+            "HD": false,
+            "KN": false
+        },
+        {
+            "id": "HZNB57xNH",
+            "tenThietBi": "GIALUONG",
+            "maThietBi": "TANGIA",
+            "DiaChi": "123.123.123",
+            "loai": "KHONGCO",
+            "tenDangNhap": "TANGIA",
+            "MatKhau": "LUONGTANGIA",
+            "DichVu": "Khám tim mạch, Khám Sản - Phụ khoa, Khám răng hàm mặt,Khám tai mũi họng, Khám hô hấp, Khám tổng quát",
+            "HD": false,
+            "KN": false
+        },
+        {
+            "id": "M7u4OwRPa",
+            "tenThietBi": "TANGIA",
+            "maThietBi": "TANGIA",
+            "DiaChi": "112.123.124",
+            "loai": "Display counter",
+            "tenDangNhap": "TANGIA",
+            "MatKhau": "123456Gia",
+            "DichVu": [
+                "Khám tim mạch",
+                " Khám Sản - Phụ khoa",
+                " Khám răng hàm mặt",
+                "aa"
+            ],
+            "HD": false,
+            "KN": false
+        },
+        {
+            "id": "A8_gjcAvU",
+            "tenThietBi": "test1",
+            "maThietBi": "Test2222",
+            "DiaChi": "111.111.123",
+            "loai": "Display counter",
+            "tenDangNhap": "TanGia",
+            "MatKhau": "TanGia123",
+            "DichVu": [
+                "Khám tim mạch",
+                "Khám Sản - Phụ khoa",
+                "Khám răng hàm mặt",
+                "Khám tai mũi họng",
+                "Khám hô hấp, Khám tổng quát"
+            ],
+            "HD": true,
+            "KN": true
+        }
+    ],
+    "dichvu": [
+        {
+            "id": 1,
+            "maDichVu": "KIO_01",
+            "tenDichVu": "Kiosk",
+            "trangthai": "Hoat Dong",
+            "TT": true,
+            "Mota": "Mô tả dịch vụ 1",
+            "tangtudong": false,
+            "Prefix": false,
+            "Surfix": false,
+            "Reset": false
+        },
+        {
+            "id": 2,
+            "maDichVu": "KIO_01",
+            "tenDichVu": "Kiosk",
+            "trangthai": "Ngung Hoat Dong",
+            "TT": true,
+            "Mota": "Mô tả dịch vụ 1",
+            "tangtudong": false,
+            "Prefix": false,
+            "Surfix": false,
+            "Reset": false
+        },
+        {
+            "id": "FWpU6eJZC",
+            "tenDichVu": "Khám tim mạch",
+            "maDichVu": "202",
+            "Mota": "Mô tả dịch vụ ",
+            "TT": true,
+            "trangthai": "Mất kết nối",
+            "tangtudong": true,
+            "Prefix": false,
+            "Surfix": true,
+            "Reset": false
+        },
+        {
+            "id": "4JTaL7XJD",
+            "tenDichVu": "Kham Benh",
+            "maDichVu": "203",
+            "Mota": "Mo ta dich vu 203",
+            "TT": true,
+            "trangthai": "Mất kết nối",
+            "tangtudong": true,
+            "Prefix": true,
+            "Surfix": false,
+            "Reset": true
+        },
+        {
+            "id": "CEmd32UbQ",
+            "tenDichVu": "Kham Benh 2",
+            "maDichVu": "206",
+            "Mota": "Mo Ta Dich Vu 206",
+            "TT": false,
+            "trangthai": "Mất kết nối",
+            "tangtudong": false,
+            "Prefix": false,
+            "Surfix": true,
+            "Reset": false
+        }
+    ],
+    "stt": [
+        {
+            "id": 1,
+            "SoTT": "2010001",
+            "trangthai": "Hoat Dong",
+            "tt": true,
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "tenDichVu": "Kham Benh",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": 2,
+            "SoTT": "2010002",
+            "trangthai": "Hoat Dong",
+            "tt": false,
+            "tenKhachhang": "Huỳnh Ái Vân",
+            "tenDichVu": "Khám sản - Phụ Khoa",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": 3,
+            "SoTT": "2010003",
+            "trangthai": "Hoat Dong",
+            "tt": true,
+            "tenKhachhang": "Lê Ái Vân",
+            "tenDichVu": "Khám răng hàm mặt",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "oNQV-EB3F",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "59482425",
+            "tenDichVu": "Khám tai mũi họng",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "xUChFvyiX",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "01573994",
+            "tenDichVu": "Khám tim mạch",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "mScC1N4Sv",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "56953349",
+            "tenDichVu": "Khám răng hàm mặt",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "SdXLLNV2K",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "87820625",
+            "tenDichVu": "Khám tim mạch",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "f_yxctrzT",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "73964724",
+            "tenDichVu": "Khám sản - Phụ Khoa",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "kjRF8nSjn",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "51292187",
+            "tenDichVu": "Khám tim mạch",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        },
+        {
+            "id": "CWiMofDtQ",
+            "tenKhachhang": "Lê Huỳnh Ái Vân",
+            "thoigiancap": "14:35 - 07/11/2021",
+            "hansudung": "14:35 - 12/11/2021",
+            "TT": false,
+            "SoTT": "85576418",
+            "tenDichVu": "Khám răng hàm mặt",
+            "trangthai": "Mất kết nối",
+            "nguoncap": "Kiosk",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com"
+        }
+    ],
+    "vaitro": [
+        {
+            "id": 1,
+            "tenvaitro": "Kế toán",
+            "songuoidung": "6",
+            "mota": "Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu",
+            "chucnang": {
+                "GRA": ["Chức năng z", "Chức năng y", "Chức năng x"],
+                "GRC": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": 2,
+            "tenvaitro": "Bác sĩ",
+            "songuoidung": "6",
+            "mota": "Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu",
+            "chucnang": {
+                "GRC": ["Chức năng z", "Chức năng y", "Chức năng x"],
+                "GRB": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": 3,
+            "tenvaitro": "Lễ tân",
+            "songuoidung": "6",
+            "mota": "Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu",
+            "chucnang": {
+                "GRA": ["Chức năng z", "Chức năng y", "Chức năng x"],
+                "GRC": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": 4,
+            "tenvaitro": "Quản lý",
+            "songuoidung": "6",
+            "mota": "Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu",
+            "chucnang": {
+                "GRB": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": 5,
+            "tenvaitro": "Admin",
+            "songuoidung": "6",
+            "mota": "Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu",
+            "chucnang": {
+                "GRA": ["Chức năng z", "Chức năng y", "Chức năng x"],
+                "GRC": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": 6,
+            "tenvaitro": "Superadmin",
+            "songuoidung": "6",
+            "mota": "Thực hiện nhiệm vụ về thống kê số liệu và tổng hợp số liệu",
+            "chucnang": {
+                "GRA": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": "5xwbamOCT",
+            "tenvaitro": "adadadad",
+            "mota": "adaddaad",
+            "songuoidung": 0,
+            "chucnang": {
+                "GRA": ["Chức năng z", "Chức năng y", "Chức năng x"],
+                "GRB": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        },
+        {
+            "id": "mWrt5m3sv",
+            "tenvaitro": "adadad",
+            "mota": "adadada",
+            "songuoidung": 0,
+            "chucnang": {
+                "GRA": ["Chức năng x", "Chức năng y", "Chức năng z"]
+            }
+        },
+        {
+            "id": "cPE_OF3Gt",
+            "tenvaitro": "dâdadadadadad",
+            "mota": "sdadsadsadada",
+            "songuoidung": 0,
+            "chucnang": {
+                "GRC": ["Chức năng z", "Chức năng y", "Chức năng x"]
+            }
+        }
+    ],
+    "user": [
+        {
+            "id": 1,
+            "hoten": "Nguyen Văn A",
+            "tenDangNhap": "tuyetnguyen@12",
+            "sdt": "0919256712",
+            "email": "tuyetnguyen123@gmail.com",
+            "vaitro": "Kế toán",
+            "trangthai": true,
+            "password": "0919256712",
+            "confirmPassword": "0919256712"
+        },
+        {
+            "id": 2,
+            "hoten": "Nguyen Văn B",
+            "tenDangNhap": "tuyetnguyen@12",
+            "sdt": "0919256712",
+            "email": "tuyetnguyen123@gmail.com",
+            "vaitro": "Kế toán",
+            "trangthai": true,
+            "password": "0919256712",
+            "confirmPassword": "0919256712"
+        },
+        {
+            "id": 3,
+            "hoten": "Nguyen Văn C",
+            "tenDangNhap": "tuyetnguyen@12",
+            "sdt": "0919256712",
+            "email": "tuyetnguyen123@gmail.com",
+            "vaitro": "Kế toán",
+            "trangthai": "false",
+            "password": "0919256712",
+            "confirmPassword": "0919256712"
+        },
+        {
+            "id": 4,
+            "hoten": "Nguyen Văn D",
+            "tenDangNhap": "tuyetnguyen@12",
+            "sdt": "0919256712",
+            "email": "tuyetnguyen123@gmail.com",
+            "vaitro": "Kế toán",
+            "trangthai": true,
+            "password": "0919256712",
+            "confirmPassword": "0919256712"
+        },
+        {
+            "id": "GSXv-EShE",
+            "hoten": "Lương Tấn Gia",
+            "tenDangNhap": "Tangia123",
+            "sdt": "0333394703",
+            "email": "tangia@gmail.com",
+            "vaitro": "Bác sĩ",
+            "password": "123456",
+            "confirmPassword": "123456",
+            "trangthai": false
+        }
+    ],
+    "nhatky": [
+        {
+            "id": 1,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        },
+        {
+            "id": 2,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        },
+        {
+            "id": 3,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        },
+        {
+            "id": 4,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        },
+        {
+            "id": 5,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        },
+        {
+            "id": 6,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        },
+        {
+            "id": 7,
+
+            "tenDangNhap": "tuyetnguyen@12",
+            "thoigian": "01/12/2021 15:12:17",
+            "IP": "192.168.3.1",
+            "thaotac": "Cập nhật thông tin dịch vụ DV_01"
+        }
+    ]
+}

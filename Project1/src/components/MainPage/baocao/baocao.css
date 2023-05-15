@@ -1,0 +1,111 @@
+.baocao_drop {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* White */
+
+    color: #ffffff;
+}
+.baocao_drop p {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown {
+    border: none;
+    outline: none;
+}
+
+.dropdown ul.dropdown-menu {
+    width: 226px;
+    height: 198px;
+
+    /* dropdown */
+
+    filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.dropdown-menu > li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px 12px;
+    gap: 24px;
+
+    width: 226px;
+    height: 44px;
+
+    /* white */
+
+    background: #ffffff;
+}
+.dropdown-menu > li > a {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+}
+.dropdown-menu > li:hover {
+    background: #fff2e7;
+}
+.dropdown-menu {
+    width: 226px;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.dropdown-menu.Nguoncap {
+    height: 152px !important;
+}
+.dropdown-menu.trangthai {
+    height: 198px !important;
+}
+.dropdown-menu::-webkit-scrollbar {
+    background: #ffffff;
+    border-radius: 43px;
+
+    display: block;
+    width: 4px;
+    height: 64px;
+    /* Orange/$-Orange-200 */
+}
+/* Track */
+.dropdown-menu::-webkit-scrollbar-track {
+}
+
+/* Handle */
+.dropdown-menu::-webkit-scrollbar-thumb {
+    position: absolute;
+    left: 50px;
+    background: #ffc89b;
+    border-radius: 43px;
+}
+
+/* Handle on hover */
+.dropdown-menu::-webkit-scrollbar-thumb:hover {
+    /* background: #b30000; */
+}
+.dropdown-menu .li_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

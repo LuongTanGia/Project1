@@ -1,0 +1,165 @@
+.detail_thietbi.create_capso .title {
+    margin-top: 24px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.detail_thietbi.create_capso .desc {
+    margin-top: 20px;
+    margin-bottom: 12px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+.detail_thietbi.create_capso .dropdown {
+    width: 400px;
+    height: 44px;
+
+    /* white */
+
+    background: #ffffff;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+}
+.detail_thietbi.create_capso .dropdown select {
+    width: 400px;
+    height: 44px;
+    outline: none;
+    /* white */
+    padding-left: 12px;
+    background: #ffffff;
+    /* Gray/$-gray-100 */
+
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.detail_thietbi.create_capso {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.detail_thietbi.create_capso .btn_box {
+    margin-top: 80px;
+}
+.modal-content {
+    width: 469px;
+    height: 385px;
+    background: #ffffff;
+    border-radius: 24px;
+    overflow: hidden;
+}
+.modal-header {
+    border: none;
+    height: 35px;
+}
+
+.modal-header button {
+    color: #ff9138;
+}
+.modal-header button:hover {
+    color: #ff9036;
+}
+.modal-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.modal-body p.title_capso {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 48px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+.modal-body .stt {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 56px;
+    line-height: 60px;
+    /* identical to box height, or 107% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.modal-body .desc_capso {
+    /* 18/18 Reg */
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-500 */
+
+    color: #282739;
+}
+.modal-body .desc_capso strong {
+    font-weight: bold;
+}
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 469px;
+    height: 110px;
+
+    /* Orange/$-Orange-400 */
+
+    background: #ff9138;
+}
+.modal-footer p {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 33px;
+    /* identical to box height, or 150% */
+
+    /* White */
+
+    color: #ffffff;
+}

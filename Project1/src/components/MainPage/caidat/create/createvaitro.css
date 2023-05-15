@@ -1,0 +1,117 @@
+.phanquyen_box {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 560px;
+    height: 420px;
+
+    /* Orange/$-Orange-50 */
+
+    background: #fff2e7;
+    border-radius: 8px;
+}
+.detail_thietbi.create_vaitro {
+    width: 1192px;
+    height: 534px;
+
+    /* White */
+
+    background: #ffffff;
+    /* Shadowbox */
+
+    box-shadow: 2px 2px 8px rgba(232, 239, 244, 0.8);
+    border-radius: 16px;
+}
+.phanquyen_box label {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    display: flex;
+    align-items: center;
+
+    /* Gray/$-gray-400 Text */
+
+    color: #535261;
+}
+.phanquyen_box h1.title {
+    width: 177px;
+    height: 30px;
+
+    /* 20/20 Bold */
+
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 30px;
+    /* identical to box height, or 150% */
+
+    /* Orange/$-Orange-500 */
+
+    color: #ff7506;
+}
+.group_check {
+    padding: 16px 24px;
+}
+.phanquyen_box input {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    /* Blue */
+
+    border: 1.5px solid #4277ff;
+    border-radius: 4px;
+}
+.phanquyen_box::-webkit-scrollbar {
+    border-radius: 43px;
+
+    display: block;
+    width: 4px;
+    height: 64px;
+    /* Orange/$-Orange-200 */
+}
+/* Track */
+.phanquyen_box::-webkit-scrollbar-track {
+}
+
+/* Handle */
+.phanquyen_box::-webkit-scrollbar-thumb {
+    position: absolute;
+    left: 50px;
+    background: #ffc89b;
+    border-radius: 43px;
+}
+
+/* Handle on hover */
+.phanquyen_box::-webkit-scrollbar-thumb:hover {
+    /* background: #b30000; */
+}
+.input_box {
+    position: relative;
+}
+.input_box input {
+    width: 100%;
+    height: 100%;
+    padding: 8.5px 0 8.5px 12px;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.input_box span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #777;
+    display: flex;
+    margin: 13.66px;
+    cursor: pointer;
+}
+.input_box span ion-icon:nth-child(2) {
+    display: none;
+}

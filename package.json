@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@yaireo/tagify": "^4.17.8",
+    "shortid": "^2.2.16"
+  }
+}

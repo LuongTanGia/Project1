@@ -1,0 +1,92 @@
+.datePicker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+input[type="date"] {
+    /* padding: 16px; */
+    width: 140px;
+    height: 44px;
+    background: #ffffff;
+    /* gray blue/gray 2 - stroke */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1.5px solid #d4d4d7;
+    border-radius: 8px;
+}
+input[type="date"]:focus {
+    outline: none;
+    box-shadow: 0 0 5px #ff9138;
+}
+
+/* Style the input when it's disabled */
+input[type="date"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+input[type="date"]::-webkit-textfield-decoration-container {
+    margin: 14px;
+}
+/* Change the appearance of the date picker icon */
+input[type="date"]::-webkit-calendar-picker-indicator {
+    background-image: url("../../../assets/img/calendar.svg");
+    background-repeat: no-repeat;
+    background-size: 18px 18px;
+    background-position: center;
+    cursor: pointer;
+}
+/* Adjust the height and width of the text input */
+input[type="date"] {
+    font-family: "Nunito";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+
+    /* Gray/$-gray-200 placeholder */
+
+    color: #a9a9b0;
+    padding: 5px;
+    /* border: 1px solid #ccc; */
+    border-radius: 5px;
+}
+
+/* Change the font and font size */
+input[type="date"] {
+    /* font-family: Arial, sans-serif; */
+    font-size: 14px;
+}
+
+/* Change the color of the text input */
+input[type="date"] {
+    color: #333;
+}
+
+/* Change the color of the text input on focus */
+input[type="date"]:focus {
+    border-color: #ff9138;
+    box-shadow: 0 0 0 2px #ff9138;
+}
+
+/* Adjust the position and size of the drop-down calendar */
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 14px;
+}
+
+/* Change the color of the selected date */
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+    color: #333;
+}
+
+/* Change the color of the selected date */
+input[type="date"]::-webkit-calendar-picker-indicator:focus {
+    outline: none;
+    background-color: #ff9138;
+    color: #fff;
+}
