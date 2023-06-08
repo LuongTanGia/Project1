@@ -41,6 +41,7 @@ function Pages() {
             <Route path="/capso/create" element={<Capsomoi />} />
             <Route path="/baocao" element={<Baocao />} />
             <Route path="/caidat/quanly" element={<Quanlyvaitro />} />
+            <Route path="/caidat/taikhoan" element={<Quanlytaikhoan />} />
 
             <Route path="/caidat/nhatky" element={<Nhatky />} />
 
